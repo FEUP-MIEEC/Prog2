@@ -1,0 +1,16 @@
+cmake_minimum_required(VERSION 3.3)
+project(Prog2)
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c99")
+
+add_executable(0.1 Aula0_Conceitos_base/1.c)
+add_executable(0.2 Aula0_Conceitos_base/2.c)
+add_executable(0.3 Aula0_Conceitos_base/3.c)
+add_executable(0.4 Aula0_Conceitos_base/4.c)
+add_executable(0.5 Aula0_Conceitos_base/5.c)
+add_executable(0.6 Aula0_Conceitos_base/6.c)
+add_executable(0.7 Aula0_Conceitos_base/7.c)
+add_executable(0.8 Aula0_Conceitos_base/8.c)
+add_executable(0.9 Aula0_Conceitos_base/9.c)
+add_executable(0.10 Aula0_Conceitos_base/10.c)
+add_executable(0.11.1 Aula0_Conceitos_base/11.1.c)

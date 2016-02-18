@@ -1,0 +1,1 @@
+Estudar_PROG1 estudo 24 23 Natacao desporto 1 4 Natacao desporto 1 5 Natacao desporto 1 25 Natacao desporto 1 26 Natacao desporto 1 27 Natacao desporto 1 28 Natacao desporto 1 2 Natacao desporto 1 3 Miniteste_PROG1 estudo 3 23 Arrumar_Livros_PROG1 desporto 2 24 Estudar_AM1 estudo 22 29 
