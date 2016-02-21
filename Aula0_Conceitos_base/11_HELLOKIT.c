@@ -1,3 +1,4 @@
+/*http://www.spoj.com/problems/HELLOKIT*/
 #include <stdio.h>
 #include <string.h>
 
