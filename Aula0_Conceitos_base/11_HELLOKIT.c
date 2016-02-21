@@ -13,8 +13,9 @@ int main()
 
 	while(1)
 	{
-		scanf("%s %d", word, &n);
+		scanf("%s", word);
 		if (word[0]=='.') break;
+		scanf("%d", &n);
 		BoolFounded = 0;
 		StringSet(word, strShifted, n);
 
