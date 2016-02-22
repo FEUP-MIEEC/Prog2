@@ -40,5 +40,5 @@ int main(){
 	for(i=0; i<2; i++){ // Neste caso apenas são dois, mas é uma boa prática fazê-lo
 		printf("Letra %c com til = %d\n", letras[i], freq[i]);
 	}
-	printf("Letra C com cedilha = %d\n", freq[2]);
+	printf("Letra %c com cedilha = %d\n", letras[i], freq[2]);
 }
