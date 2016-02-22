@@ -13,13 +13,6 @@ int in_array(int a, int *v, int len){
 	return 0;
 }
 
-void imprime_vetor(int *v, int len){
-	int i;
-	for(i=0; i<=len; i++){
-		
-	}
-}
-
 
 int main(){
 	FILE *f;
