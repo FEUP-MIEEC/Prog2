@@ -10,11 +10,11 @@ int main(){
 	int c;
 	int i=0;
 	char titulo[31], artista[31], album[31], ano[5], comentario[31], dois[2], track, numero, genero;
-	for(i=0;i<30;i++)	{ titulo	[i]	=	getc(f);} titulo[30]=0;
-	for(i=0;i<30;i++)	{ artista	[i]	=	getc(f);} artista[30]=0;
-	for(i=0;i<30;i++)	{ album		[i]	=	getc(f);} album[30]=0;
-	for(i=0;i<4;i++)	{ ano		[i]	=	getc(f);} ano[4]=0;
-	for(i=0;i<28;i++)	{ comentario[i]	=	getc(f);}
+	for(i=0;i<30;i++)	{ 	titulo		[i]		=	getc(f);} 	titulo[30]		=0;
+	for(i=0;i<30;i++)	{ 	artista		[i]		=	getc(f);} 	artista[30]		=0;
+	for(i=0;i<30;i++)	{ 	album		[i]		=	getc(f);} 	album[30]		=0;
+	for(i=0;i<4;i++)	{	ano			[i]		=	getc(f);} 	ano[4]			=0;
+	for(i=0;i<28;i++)	{ 	comentario	[i]		=	getc(f);}
 	getc(f);
 	//comentario[30]=0;
 	numero=getc(f);
