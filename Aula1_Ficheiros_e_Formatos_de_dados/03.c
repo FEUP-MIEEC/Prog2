@@ -45,13 +45,14 @@ int main(){
 			}
 			// Encontrámos uma TAG!
 			esvaziastring(str, 200);
-			fseek(f, 7, SEEK_CUR); // 
+			fseek(f, 7, SEEK_CUR); // Avançar 7 bytes
 			
 			//Vamos ler o url, que é todo o texto até à próxima aspa.
+			
 			i=0;
 			while(1){
 				c=getc(f);
-				if (c=='\"'){
+				if (c=='\"'){ // A aspa tem de levar uma backslash antes por causa de character escaping.
 					break;
 				}
 				str[i]=c;
@@ -74,7 +75,7 @@ int main(){
 					 * A consola imprime valores em UTF-8, mas p ficheiro
 					 * que estamos a ler está am ASCII. Como só há 1 tipo de
 					 * carateres especiais neste ficheiro, que são o 'a'
-                     * acentuado (á), só temos de nos preocupar com esse.
+					 * acentuado (á), só temos de nos preocupar com esse.
 					 */
 					if(c==0xE1){
 						str[i]=0xC3;
