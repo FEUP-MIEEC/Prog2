@@ -4,6 +4,12 @@
 #include <ctype.h>
 
 typedef struct{
+	
+	/*** No fundo, trata-se esta técnica de uma forma de poupar memória. 
+	   * Como sabemos, cada valor de r, g, ou b ocupa exatamente 1 byte.
+	   * O único tipo de variável que temos em C que ocupa o mesmo é a char.
+	   * Se usássemos ints, utilizaríamos (4-1)*3=9 vezes mais memória do que o necessário. 
+	   **/
 	unsigned char r;
 	unsigned char g;
 	unsigned char b;
