@@ -35,6 +35,7 @@ int main(){
 		c=getc(f);
 		//printf("=== ce:%i ===\n\n", ce);
 		if (c==EOF){
+			fclose(f);
 			break;
 		}
 		//printf("%c", c);
