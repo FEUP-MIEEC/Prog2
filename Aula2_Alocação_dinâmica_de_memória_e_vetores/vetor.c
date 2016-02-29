@@ -131,7 +131,7 @@ int vetor_remove(vetor* vec, int pos)
 	/* liberta string na posicao a remover */
 	free(vec->elementos[pos].str);
 
-	/* copia todos os elementos a partir da posição pos+1 até ao fim do vetor para pos */
+	/* copia todos os elementos a partir da posiÃ§Ã£o pos+1 atÃ© ao fim do vetor para pos */
 	for(i=pos+1; i<vec->tamanho; i++)
 	{
 		vec->elementos[i-1] = vec->elementos[i];
