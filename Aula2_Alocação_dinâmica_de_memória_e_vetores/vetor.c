@@ -180,3 +180,14 @@ int vetor_ordena(vetor* vec)
 
 	return 0;
 }
+
+vetor* vetor_concatena(vetor *vec1,	vetor *vec2){
+	if(vec1 == NULL || vec2 == NULL) return NULL;
+	vetor *r;
+	r= vetor_novo();
+	r->elementos = vec1->tamanho + vec2->tamanho;
+	r->capacidade = vec1->capacidade + vec2->capacidade;
+	strcpy(r->elementos, vec1->elementos);
+	strcat(r->elementos, vec2->elementos);
+	return r;
+}
