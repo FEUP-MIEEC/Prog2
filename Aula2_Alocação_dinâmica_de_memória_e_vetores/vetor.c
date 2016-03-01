@@ -191,3 +191,27 @@ vetor* vetor_concatena(vetor *vec1,	vetor *vec2){
 	strcat(r->elementos, vec2->elementos);
 	return r;
 }
+
+int vetor_inverte(vetor *vec){
+	int n = sizeof(vec)/sizeof(int), i, j=n, t;
+	if(n > 0){
+		for(i=0; i<n && i<j;i++){
+			t=vec[i];
+			vec[i] = vec[j];
+			vec[j] = t;
+			j--;
+		}
+	}
+	return 0;
+}
+
+vetor* vetor_baralha (vetor *vec){
+	int i;
+    srand(time(NULL));
+    for (i = 0; i < n; ++i) {
+        int k = rand() % (n+1);
+        int temp = vec[i];
+        vec[i] = vec[k];
+        vec[k] = temp;
+    }
+}
