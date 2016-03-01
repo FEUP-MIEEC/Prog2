@@ -105,12 +105,12 @@ int vetor_ordena(vetor *vec);
 /*
  * cria um novo vetor que resulta da concatenação de dois
  */
-vetor* vetor_concatena(vetor *vec1,	vetor *vec2);
+vetor* vetor_concatena(vetor *vec1, vetor *vec2);
 
 /*
  * inverte os elementos do vetor
  */
-int	vetor_inverte(vetor *vec);
+int vetor_inverte(vetor *vec);
 
 /*
  * cria	um novo vetor com os mesmos elementos do vetor vec mas guardados em posições aleatórias
