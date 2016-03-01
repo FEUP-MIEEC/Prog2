@@ -113,7 +113,7 @@ vetor* vetor_concatena(vetor *vec1,	vetor *vec2);
 int	vetor_inverte(vetor *vec);
 
 /*
- * cria	um	novo vetor	com	os	mesmos	elementos	do	vetor vec mas guardados em posições aleatórias
+ * cria	um novo vetor com os mesmos elementos do vetor vec mas guardados em posições aleatórias
  */
 vetor* vetor_baralha (vetor *vec);
 
