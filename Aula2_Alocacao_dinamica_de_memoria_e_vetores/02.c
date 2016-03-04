@@ -18,12 +18,11 @@ Nota:
 
 #define NSTRINGS 3
 
-int main()
-{
+int main() {
     char **v;
     char str[80];
     int i, pos;
-    v = malloc(NSTRINGS * sizeof(char*));
+    v = malloc(NSTRINGS * sizeof(char *));
 
     /* [Inicializar o vetor 'v'] 
     ***
@@ -34,29 +33,25 @@ int main()
     ==32466==    by 0x80485F4: main (Problema_2.c:26)
     ***
     */
-    for (int i = 0; i < NSTRINGS; ++i)
-    {
+    for (i = 0; i < NSTRINGS; ++i) {
         v[i] = NULL;
     }
 
-    while(1)
-    {
-        for(i = 0; i < NSTRINGS; i++)
-		{
-			printf("[%d] ", i+1);
-			if(v[i] == NULL)
-				printf("(vazio)\n");
-			else
-            	printf("%s\n", v[i]);
-		}
+    while (1) {
+        for (i = 0; i < NSTRINGS; i++) {
+            printf("[%d] ", i + 1);
+            if (v[i] == NULL)
+                printf("(vazio)\n");
+            else
+                printf("%s\n", v[i]);
+        }
 
-		do        
-		{
+        do {
             printf("Posicao para nova string (1 a %d): ", NSTRINGS);
             scanf("%d", &pos);
             getchar(); /* elimina \n */
-		}
-		while(pos < 0 || pos > NSTRINGS);
+        }
+        while (pos < 0 || pos > NSTRINGS);
 
         if (pos == 0)
             break;
@@ -87,17 +82,16 @@ int main()
             para a inclusão do '\0'. 
         Isto é essencial, caso contrário a função strcpy() vai "escrever" o carater '\0' 
             (tal como descrito acima) fora dos limites do vetor.
-        */ 
+        */
         v[pos - 1] = realloc(v[pos - 1], strlen(str) + 1);
-		strcpy(v[pos - 1], str);
+        strcpy(v[pos - 1], str);
     }
 
     /*
     Falta fazer free() dos (1 + NSTRINGS) vetores
     Ou seja, vetor 'v' e os vetores nele contidos 
     */
-    for (int i = 0; i < NSTRINGS; ++i)
-    {
+    for (i = 0; i < NSTRINGS; ++i) {
         free(v[i]);
     }
 
