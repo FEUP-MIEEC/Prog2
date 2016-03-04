@@ -10,16 +10,15 @@
 #define KWHT  "\x1B[37m"
 #define RESET "\033[0m"
 
-int main()
-{
-  printf(KRED "red\n" RESET);
-  printf(KGRN "green\n" RESET);
-  printf(KYEL "yellow\n" RESET);
-  printf(KBLU "blue\n" RESET);
-  printf(KMAG "magenta\n" RESET);
-  printf(KCYN "cyan\n" RESET);
-  printf(KWHT "white\n" RESET);
-  printf(KNRM "normal\n" RESET);
+int main() {
+    printf(KRED "red\n" RESET);
+    printf(KGRN "green\n" RESET);
+    printf(KYEL "yellow\n" RESET);
+    printf(KBLU "blue\n" RESET);
+    printf(KMAG "magenta\n" RESET);
+    printf(KCYN "cyan\n" RESET);
+    printf(KWHT "white\n" RESET);
+    printf(KNRM "normal\n" RESET);
 
-  return 0;
+    return 0;
 }
