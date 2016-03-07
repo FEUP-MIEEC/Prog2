@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <string.h>
-#include <ctype.h>
 
 /*
   Este exercício tem como objetivo desenvolver algoritmos genéricos de
