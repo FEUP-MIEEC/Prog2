@@ -3,7 +3,7 @@
 #include "vetor.h"
 
 void vetor_imprime(vetor * vec);
-int	vetor_num_ocorrencias(vetor	*vec, char *pesquisa);
+int vetor_num_ocorrencias(vetor	*vec, char *pesquisa);
 void vetor_remove_repetidas(vetor *vec);
 vetor* vetor_pesquisa_parcial(vetor *vec, char *pesquisa);	
 
@@ -82,6 +82,8 @@ int main()
 	 *
 	 */	 
 	 vetor_imprime(vetor_pesquisa_parcial(plantas, "Acacia"));
+
+	 fclose(f);
 }
 
 void vetor_imprime(vetor * vec)
