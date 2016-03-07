@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #include "vetor.h"
 
 void vetor_imprime(vetor * vec);
@@ -74,15 +75,17 @@ int main()
 	 */
 
 	 vetor_remove_repetidas(plantas);
-	 printf("Apos remoção das plantas repetidas o vetor tem %d posições.\n", plantas->tamanho - 1);
+	 printf("Após remoção das plantas repetidas o vetor tem %d posições.\n", plantas->tamanho - 1);
 	 
 	/*
 	 *
 	 Exercíco f)
 	 *
-	 */	 
-	 vetor_imprime(vetor_pesquisa_parcial(plantas, "Acacia"));
-
+	 */
+	 vetor * aux = 	vetor_pesquisa_parcial(plantas, "Acacia");
+	 vetor_imprime(aux);
+	 vetor_apaga(aux);
+	 vetor_apaga(plantas);
 	 fclose(f);
 }
 
