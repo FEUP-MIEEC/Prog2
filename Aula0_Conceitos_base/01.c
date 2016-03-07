@@ -11,7 +11,7 @@ int main() {
     printf("Qual o incremento? ");
     scanf("%f", &inc);
 
-    for (i; i <= imax; i += inc) {
+    for (i = 0; i <= imax; i += inc) {
         printf("f(%.1f)=%.1f\n", i, a * i * i);
     }
     return 0;
