@@ -74,7 +74,7 @@ int main()
 	 */
 
 	 vetor_remove_repetidas(plantas);
-	 printf("Após remoção das plantas repetidas o vetor tem %d posições.\n", plantas->tamanho - 1);
+	 printf("Apos remoção das plantas repetidas o vetor tem %d posições.\n", plantas->tamanho - 1);
 	 
 	/*
 	 *
