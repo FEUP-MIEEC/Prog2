@@ -8,7 +8,7 @@ int main() {
     char ch;
     FILE *f;
 
-    f = fopen("teste.c", "r");
+    f = fopen("enunciado/teste.c", "r");
 
     while (EOF != (ch = (char) fgetc(f))) {
         chars++;

@@ -14,7 +14,7 @@ int main()
 	int N = 0, i = 0;
 
 	vetor * plantas = vetor_novo();
-	f = fopen("plantas.txt", "r");
+	f = fopen("enunciado/plantas.txt", "r");
 
 	/*
 	 *

@@ -15,7 +15,7 @@ int main() {
     int v_a[2] = {131, 163};
     int v_o[2] = {149, 181};
     int v_c[2] = {135, 167};
-    f = fopen("lusiadas-utf8.txt", "r");
+    f = fopen("enunciado/lusiadas-utf8.txt", "r");
     int c = 0;
     int freq[3] = {};
     char letras[3] = {'A', 'O', 'C'};

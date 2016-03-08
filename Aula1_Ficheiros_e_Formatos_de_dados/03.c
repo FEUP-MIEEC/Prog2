@@ -15,7 +15,7 @@ typedef struct {
 
 int main() {
     FILE *f;
-    f = fopen("pagina.html", "r");
+    f = fopen("enunciado/pagina.html", "r");
     int c, i = 0, ce = 0;
     char str[200];
     entrada entradas[5];

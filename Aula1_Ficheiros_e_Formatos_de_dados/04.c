@@ -19,7 +19,7 @@ void print_pixelinfo(pixel **p, int h, int w) {
 
 int main() {
     FILE *f;
-    f = fopen("imagem.bmp", "r");
+    f = fopen("enunciado/imagem.bmp", "r");
     int i = 0, j;
     int c;
 

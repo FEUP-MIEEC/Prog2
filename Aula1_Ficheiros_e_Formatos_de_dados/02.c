@@ -3,7 +3,7 @@
 
 int main() {
     FILE *f;
-    f = fopen("musica.mp3", "r");
+    f = fopen("enunciado/musica.mp3", "r");
     fseek(f, -125, SEEK_END);
     int c;
     int i = 0;

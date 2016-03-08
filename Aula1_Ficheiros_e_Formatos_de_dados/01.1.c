@@ -19,7 +19,7 @@ int main() {
     int v_o[6] = {211, 212, 213, 243, 244, 245};
     int v_u[2] = {218, 250};
     int v_c[2] = {199, 231};
-    f = fopen("lusiadas.txt", "r");
+    f = fopen("enunciado/lusiadas.txt", "r");
     int c, i = 0;
     int freq[26] = {};
     //printf("%d\n", in_array(198, v_a, sizeof(v_a)/sizeof(int))); exit(1);
