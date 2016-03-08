@@ -12,4 +12,5 @@ done
 
 rm -r figlet-2.2.5
 
+chmod +x git.sh
 ./git.sh
