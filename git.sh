@@ -1,13 +1,11 @@
 
 git config --global user.name "Dannyps"
 git config --global user.email "danny@dannyps.net"
-
-git add .
-
+git init
 git remote add origin "https://dannyps:${GH_TOKEN}@github.com/FEUP-MIEEC/Prog2"
 #git checkout -b build
 git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
-
+git add .
 # Force push from the current repo's master branch to the remote
 # repo's gh-pages branch. (All previous history on the gh-pages branch
 # will be lost, since we are overwriting it.) We redirect any output to
