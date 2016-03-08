@@ -18,20 +18,20 @@
   - 1 se a > b
 */
 
-typedef int (*comp)(const void * a, const void * b);
+typedef int (*comp)(const void *a, const void *b);
 
 /*
   A função de comparação que se segue exemplifica a comparação de ints
   de forma ascendente:
 */
 
-int comp_int_asc(const void * a, const void * b){
-    int a_tmp = *((int*) a);
-    int b_tmp = *((int*) b);
+int comp_int_asc(const void *a, const void *b) {
+    int a_tmp = *((int *) a);
+    int b_tmp = *((int *) b);
 
-    if(b_tmp > a_tmp)
+    if (b_tmp > a_tmp)
         return -1;
-    if(a_tmp > b_tmp)
+    if (a_tmp > b_tmp)
         return 1;
     return 0;
 }
@@ -59,7 +59,7 @@ int comp_int_asc(const void * a, const void * b){
   - order: apontador para uma função de ordenação
 */
 
-void sort(void * ptr, int size, int elem_size, comp order);
+void sort(void *ptr, int size, int elem_size, comp order);
 
 /*
   Para utilizar esta função para ordenar um vetor de ints de forma
@@ -74,15 +74,16 @@ void sort(void * ptr, int size, int elem_size, comp order);
   elementos do vetor, deverá utilizar as seguintes funções:
 */
 
-void * get_elem(void * ptr, int n, int elem_size) {
-    return ((char*)ptr) + n * elem_size;
+void *get_elem(const void *ptr, int n, int elem_size) {
+    return ((char *) ptr) + n * elem_size;
 }
 
-void swap(void * ptr_a, void * ptr_b, int elem_size) {
-    for(int i = 0; i < elem_size; i++) {
-        char tmp = ((char*)ptr_a)[i];
-        ((char *)ptr_a)[i] = ((char*)ptr_b)[i];
-        ((char *)ptr_b)[i] = tmp;
+void swap(void *ptr_a, void *ptr_b, int elem_size) {
+    int i;
+    for (i = 0; i < elem_size; i++) {
+        char tmp = ((char *) ptr_a)[i];
+        ((char *) ptr_a)[i] = ((char *) ptr_b)[i];
+        ((char *) ptr_b)[i] = tmp;
     }
 }
 
@@ -106,15 +107,16 @@ void swap(void * ptr_a, void * ptr_b, int elem_size) {
   ordenação:
 */
 
-void sort(void * ptr, int size, int elem_size, comp order) {
-    for(int i = 0; i < size; i++) {
-        void * cur_ptr = get_elem(ptr, i, elem_size);
-        void * swap_ptr = cur_ptr;
+void sort(void *ptr, int size, int elem_size, comp order) {
+    int j, i;
+    for (i = 0; i < size; i++) {
+        void *cur_ptr = get_elem(ptr, i, elem_size);
+        void *swap_ptr = cur_ptr;
 
-        for(int j = i+1; j < size; j++) {
-            void * tmp_ptr = get_elem(ptr, j, elem_size);
+        for (j = i + 1; j < size; j++) {
+            void *tmp_ptr = get_elem(ptr, j, elem_size);
 
-            if(order(tmp_ptr, swap_ptr) < 0)
+            if (order(tmp_ptr, swap_ptr) < 0)
                 swap_ptr = tmp_ptr;
         }
 
@@ -123,15 +125,18 @@ void sort(void * ptr, int size, int elem_size, comp order) {
 }
 
 
-
 /*
    Ex 1: Implemente um algoritmo de pesquisa linear. Esta função
    deverá retornar um apontador para o elemento no vetor caso esteja
    presente, ou NULL caso contrário.
 */
 
-void * linear_search(const void * elem, const void * ptr, int size, int elem_size, comp order) {
-    return NULL;
+void *linear_search(const void *elem, const void *ptr, int size, int elem_size, comp order) {
+    int i;
+    for (i = 0; i < size; i++)
+        if (order(get_elem(ptr, i, size), elem) == 0)
+            return get_elem(ptr, i, elem_size);
+    return 0;
 }
 
 /*
@@ -140,16 +145,29 @@ void * linear_search(const void * elem, const void * ptr, int size, int elem_siz
    presente, ou NULL caso contrário.
 */
 
-void * binary_search(const void * elem, const void * ptr, int size, int elem_size, comp order) {
-    return NULL;
+void *binary_search(const void *elem, const void *ptr, int size, int elem_size, comp order) {
+    int left = 0, right = size - 1;
+    while (left <= right) {
+        int mid = (left + right) / 2;
+        if (order(elem, get_elem(ptr, mid, elem_size)))
+            return get_elem(ptr, mid, elem_size);
+        else if (order(elem, get_elem(ptr, mid, elem_size)) == -1)
+            right = mid - 1;
+        else left = mid + 1;
+    }
+    return 0;
 }
 
 /*
   Ex 3: Implemente o algoritmo de ordenação por inserção.
 */
 
-void insertion_sort(void * ptr, int size, int elem_size, comp order) {
-
+void insertion_sort(void *ptr, int size, int elem_size, comp order) {
+    int i, j;
+    for (i = 1; i < size; i++) {
+        for (j = i; j > 0 && order(get_elem(ptr, j, elem_size), get_elem(ptr, j - 1, elem_size)) == -1; j--)
+            swap(get_elem(ptr, j, elem_size), get_elem(ptr, j -1, elem_size), elem_size);
+    }
 }
 
 /*
@@ -159,40 +177,44 @@ void insertion_sort(void * ptr, int size, int elem_size, comp order) {
    caracteres alfabéticos (A->Z e a->z).
 */
 
-int comp_char_desc(const void * a, const void * b){
-    char a_tmp = *((char*) a);
-    char b_tmp = *((char*) b);
+int comp_char_desc(const void *a, const void *b) {
+    char a_tmp = *((char *) a);
+    char b_tmp = *((char *) b);
+    if ((int) a_tmp < (int) b_tmp)
+        return 1;
+    if ((int) a_tmp > (int) b_tmp)
+        return -1;
     return 0;
 }
 
 #define SIZE 6
 
-int main()
-{
-    int vec [SIZE] = {3,-2,4,5,9,1};
-    int tmp [SIZE];
+int main() {
+    int vec[SIZE] = {3, -2, 4, 5, 9, 1};
+    int tmp[SIZE];
+    int i;
 
     memcpy(tmp, vec, SIZE * sizeof(int));
 
     puts("-- Exemplo --");
     printf("Antes:");
-    for(int i = 0; i < SIZE; i++) printf(" %d", tmp[i]);
+    for (i = 0; i < SIZE; i++) printf(" %d", tmp[i]);
     puts("");
 
     sort(tmp, SIZE, sizeof(int), comp_int_asc);
 
     printf("Depois:");
-    for(int i = 0; i < SIZE; i++) printf(" %d", tmp[i]);
+    for (i = 0; i < SIZE; i++) printf(" %d", tmp[i]);
     puts("");
 
     memcpy(tmp, vec, SIZE * sizeof(int));
 
     puts("-- Ex1 --");
     int num = 4;
-    void * elem = linear_search(&num, tmp, SIZE, sizeof(int), comp_int_asc);
+    void *elem = linear_search(&num, tmp, SIZE, sizeof(int), comp_int_asc);
 
-    if(elem) {
-        printf("Elemento %d contido na posicao %ld do vetor\n", num, ((int*)elem) - tmp);
+    if (elem) {
+        printf("Elemento %d contido na posicao %ld do vetor\n", num, ((int *) elem) - tmp);
     }
     else {
         printf("Elemento %d nao contido no vetor\n", num);
@@ -204,8 +226,8 @@ int main()
     puts("-- Ex2 --");
     elem = binary_search(&num, tmp, SIZE, sizeof(int), comp_int_asc);
 
-    if(elem) {
-        printf("Elemento %d contido na posicao %ld do vetor\n", num, ((int*)elem) - tmp);
+    if (elem) {
+        printf("Elemento %d contido na posicao %ld do vetor\n", num, ((int *) elem) - tmp);
     }
     else {
         printf("Elemento %d nao contido no vetor\n", num);
@@ -215,13 +237,13 @@ int main()
 
     puts("-- Ex3 --");
     printf("Antes:");
-    for(int i = 0; i < SIZE; i++) printf(" %d", tmp[i]);
+    for (i = 0; i < SIZE; i++) printf(" %d", tmp[i]);
     puts("");
 
     insertion_sort(tmp, SIZE, sizeof(int), comp_int_asc);
 
     printf("Depois:");
-    for(int i = 0; i < SIZE; i++) printf(" %d", tmp[i]);
+    for (i = 0; i < SIZE; i++) printf(" %d", tmp[i]);
     puts("");
 
     puts("-- Ex4 --");
@@ -236,4 +258,5 @@ int main()
     printf("Depois:");
     puts(str);
 
+    return 0;
 }
