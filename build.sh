@@ -1,8 +1,8 @@
 wget 'ftp://ftp.figlet.org/pub/figlet/program/unix/figlet-2.2.5.tar.gz'
 
-tar -xvf figlet-2.2.5.tar.gz
+tar -xvf figlet-2.2.5.tar.gz &> /dev/null
 cd figlet-2.2.5
-make 
+make &> /dev/null
 cd ..
 
 for i in {0..3}
@@ -11,11 +11,23 @@ do
 done
 
 
-git config --global user.name "Dannyps"
-git config --global user.email "danny@dannyps.net"
-git init
-git remote add origin https://${GH_TOKEN}@github.com/FEUP-MIEEC/Prog2 #>/dev/null
-git checkout --orphan gh-pages
-git add .
-git commit -q -m "Deploy $(date)" #&> /dev/null
-git push -q -f origin gh-pages #&> /dev/null
+
+setup_git() {
+	git config --global user.name "Dannyps"
+	git config --global user.email "danny@dannyps.net"
+}
+
+commit_website_files() {
+	git checkout -b gh-pages
+	git add .
+	git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
+}
+
+upload_files() {
+	git remote add origin-pages https://dannyps:${GH_TOKEN}@github.com/FEUP-MIEEC/Prog2.git #> /dev/null 2>&1
+	git push --quiet --set-upstream origin-pages gh-pages 
+}
+
+setup_git
+commit_website_files
+upload_files
