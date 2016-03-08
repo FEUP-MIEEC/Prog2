@@ -12,23 +12,4 @@ done
 
 rm -r figlet-2.2.5
 
-setup_git() {
-	git config --global user.name "Dannyps"
-	git config --global user.email "danny@dannyps.net"
-}
-
-commit_website_files() {
-	git add .
-	git checkout -b build
-	git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
-}
-
-upload_files() {
-	git remote add origin-pages https://dannyps:${GH_TOKEN}@github.com/FEUP-MIEEC/Prog2.git #> /dev/null 2>&1
-	git push origin --delete build
-	git push --quiet --set-upstream origin-pages build
-}
-
-setup_git
-commit_website_files
-upload_files
+./git.sh
