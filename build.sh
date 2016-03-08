@@ -11,7 +11,7 @@ do
 done
 
 
-git config --global user.name "Daniel Silva"
+git config --global user.name "Dannyps"
 git config --global user.email "danny@dannyps.net"
 git init
 git remote add origin https://${GH_TOKEN}@github.com/FEUP-MIEEC/Prog2 #>/dev/null
