@@ -46,7 +46,7 @@ int main()
 	 *
 	 */
 
-	printf("A planta Podocarpus macrophyllus (Thunberg) encontra-se na posição %d\n", vetor_pesquisa(plantas, "Podocarpus macrophyllus (Thunberg)"));
+	printf("A planta Podocarpus macrophyllus (Thunberg) encontra-se na posicao %d\n", vetor_pesquisa(plantas, "Podocarpus macrophyllus (Thunberg)"));
 
 	/*
 	 *
@@ -58,7 +58,7 @@ int main()
 	{
 		vetor_imprime(plantas);
 	}
-	else printf("Ocorreu um erro na ordenação do vetor\n");
+	else printf("Ocorreu um erro na ordenacao do vetor\n");
 
 	/*
 	 *
@@ -74,7 +74,7 @@ int main()
 	 */
 
 	 vetor_remove_repetidas(plantas);
-	 printf("Após remoção das plantas repetidas o vetor tem %d posições.\n", plantas->tamanho - 1);
+	 printf("Apos remocao das plantas repetidas o vetor tem %d posicoes.\n", plantas->tamanho - 1);
 	 
 	/*
 	 *
@@ -103,9 +103,9 @@ int	vetor_num_ocorrencias(vetor	*vec, char *pesquisa)
 	/*
 	 * Considerando que o vetor não está ordenado: Pesquisa Sequencial
 	 */
-	int counter = 0, n = vec->tamanho;
+	int counter = 0, n = vec->tamanho, i;
 
-	for (int i = 0; i < n; ++i)
+	for (i = 0; i < n; ++i)
 	{
 		if (!strcmp(pesquisa, vetor_elemento(vec, i)))
 			counter++;
