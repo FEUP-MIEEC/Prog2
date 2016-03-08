@@ -17,5 +17,5 @@ clang 03.3_.c vetor.o
 
 
 echo "Executing the compiled programs"
-./01.out <<< "8 1 2 3 5 4 6 7 8 " | tee out/01.output
+./01.out <<< "8 1 2 3 5 4 6 7 8" | tee out/01.output
 
