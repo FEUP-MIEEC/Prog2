@@ -25,6 +25,7 @@ commit_website_files() {
 
 upload_files() {
 	git remote add origin-pages https://dannyps:${GH_TOKEN}@github.com/FEUP-MIEEC/Prog2.git #> /dev/null 2>&1
+	git pull build
 	git push --quiet --set-upstream origin-pages build
 }
 
