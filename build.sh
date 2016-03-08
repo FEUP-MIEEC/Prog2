@@ -18,14 +18,14 @@ setup_git() {
 }
 
 commit_website_files() {
-	git checkout -b build
 	git add .
+	git checkout -b build
 	git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
 }
 
 upload_files() {
 	git remote add origin-pages https://dannyps:${GH_TOKEN}@github.com/FEUP-MIEEC/Prog2.git #> /dev/null 2>&1
-	git push --quiet --set-upstream origin build 
+	git push --quiet --set-upstream origin-pages build
 }
 
 setup_git
