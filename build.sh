@@ -10,7 +10,7 @@ do
    figlet-2.2.5/figlet -d figlet-2.2.5/fonts " => Aula "$i; cd Aula$i*; chmod +x build.sh; ./build.sh; cd ..
 done
 
-
+rm -r figlet-2.2.5
 
 setup_git() {
 	git config --global user.name "Dannyps"
@@ -18,14 +18,14 @@ setup_git() {
 }
 
 commit_website_files() {
-	git checkout -b gh-pages
+	git checkout -b build
 	git add .
 	git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
 }
 
 upload_files() {
 	git remote add origin-pages https://dannyps:${GH_TOKEN}@github.com/FEUP-MIEEC/Prog2.git #> /dev/null 2>&1
-	git push --quiet --set-upstream origin-pages gh-pages 
+	git push --quiet --set-upstream master build 
 }
 
 setup_git
