@@ -13,9 +13,9 @@ int main(){
 }*/
 
 /////////////////////////  B  ///////////////////////////////////
-/*
-//Nota: quando introduz o indice 1, deve-se obter a vogal [a]
 
+//Nota: quando introduz o indice 1, deve-se obter a vogal [a]
+/*
 #include <stdio.h>
 
 char vogalindex(int idx){
@@ -26,16 +26,22 @@ char vogalindex(int idx){
 	{
 	case 1:
 		vogal2='a';
+            break;
 	case 2:
 		vogal2='e';
+            break;
 	case 3:
 		vogal2='i';
+            break;
 	case 4:
 		vogal2='o';
+            break;
 	case 5:
 		vogal2='u';
+            break;
 	default:
 		vogal2='c';
+            break;
 	}
 	return vogal2;
 }
@@ -64,7 +70,7 @@ int main(){
 	int *vptr=v;
 	int i;
 
-	//Inicialização de um vector a zero
+	//Inicializaï¿½ï¿½o de um vector a zero
 	for(i=0;i<5;i++)
 	{
 	   *(vptr+i)=0;
@@ -100,7 +106,7 @@ void main(){
 	char *s1 = "Hello, ";
 	char *s2 = "world!";
 	char *s3 = strcat(s1, s2);
-    
+
     printf("%s",s1);
 	printf("%s\n",s2);
 	printf("%s",s3);
@@ -110,7 +116,7 @@ void main(){
 
 /////////////////////////  F  ///////////////////////////////////
 /*
-//Nota: verificar o código até que a frase Hello World seja escrita na consola
+//Nota: verificar o cï¿½digo atï¿½ que a frase Hello World seja escrita na consola
 #include <stdio.h>
 #include <string.h>
 
@@ -130,8 +136,8 @@ void main(void)
 
 
 /////////////////////////  G  ///////////////////////////////////
-/* 
-// Nota: No final deverá imprimir "String" na consola
+/*
+// Nota: No final deverï¿½ imprimir "String" na consola
 #include <stdio.h>
 #include <string.h>
 
