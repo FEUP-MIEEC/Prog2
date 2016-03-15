@@ -10,4 +10,7 @@ branches:
   only:
     - master
 notifications:
-  slack: emptystack:Xy9Q9tERJ6uosV0ubscxVIsG
+  slack:
+    rooms:
+      - emptystack:uY0KFjhVs3b2XoW2aI1GkjqA#prog2
+      - emptystack:uY0KFjhVs3b2XoW2aI1GkjqA#programmers
