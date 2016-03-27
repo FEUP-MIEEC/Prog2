@@ -166,7 +166,7 @@ void insertion_sort(void *ptr, int size, int elem_size, comp order) {
     int i, j;
     for (i = 1; i < size; i++) {
         for (j = i; j > 0 && order(get_elem(ptr, j, elem_size), get_elem(ptr, j - 1, elem_size)) == -1; j--)
-            swap(get_elem(ptr, j, elem_size), get_elem(ptr, j -1, elem_size), elem_size);
+            swap(get_elem(ptr, j, elem_size), get_elem(ptr, j - 1, elem_size), elem_size);
     }
 }
 

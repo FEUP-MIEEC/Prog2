@@ -1,5 +1,5 @@
 /*****************************************************************/
-/*         Trabalho pratico 1 | PROG2 | MIEEC | 2015/16          */      
+/*         Trabalho pratico 1 | PROG2 | MIEEC | 2015/16          */
 /*****************************************************************/
 /*                  NAO ALTERAR ESTE FICHEIRO                    */
 /*****************************************************************/
@@ -11,20 +11,18 @@
 * este registo contem uma string e apontadores para o proximo e 
 * anterior elementos da lista
 */
-typedef struct _elemento
-{
-	/* string armazenada */
-	char* str;
-	/* apontadores para elementos vizinhos */
+typedef struct _elemento {
+    /* string armazenada */
+    char *str;
+    /* apontadores para elementos vizinhos */
     struct _elemento *proximo;
     struct _elemento *anterior;
 } elemento;
 
-typedef struct
-{
-	elemento *inicio;
-	elemento *fim;
-	int tamanho;
+typedef struct {
+    elemento *inicio;
+    elemento *fim;
+    int tamanho;
 } lista;
 
 #define INICIO 0
@@ -35,7 +33,7 @@ typedef struct
  *  retorno: apontador para a lista
  *  observacao: se a lista não foi criada retorna NULL 
  */
-lista* lista_nova();
+lista *lista_nova();
 
 /** 
  *  elimina uma lista, libertando toda a memoria ocupada
@@ -56,14 +54,14 @@ int lista_tamanho(lista *lst);
  *  parametro: lst apontador para a lista
  *  retorno: apontador para o primeiro elemento da lista ou NULL se lista = NULL
  */
-elemento* lista_inicio(lista *lst);
+elemento *lista_inicio(lista *lst);
 
 /**
  *  devolve o apontador para o ultimo elemento da lista
  *  parametro: lst apontador para a lista
  *  retorno: apontador para o ultimo elemento da lista ou NULL se lista = NULL
  */
-elemento* lista_fim(lista *lst);
+elemento *lista_fim(lista *lst);
 
 /**
  *  insere um elemento na posicao especificada
@@ -73,7 +71,7 @@ elemento* lista_fim(lista *lst);
  *             se pos=NULL insere no fim da lista
  *  retorno: apontador para novo elemento inserido na lista ou NULL se ocorrer um erro
  */
-elemento* lista_insere(lista *lst, const char* valor, elemento *pos);
+elemento *lista_insere(lista *lst, const char *valor, elemento *pos);
 
 /**
  *  remove o elemento especificado
@@ -81,7 +79,7 @@ elemento* lista_insere(lista *lst, const char* valor, elemento *pos);
  *  parametro: pos elemento que se pretende remover
  *  retorno: apontador para proximo elemento ao que foi removido ou NULL se ocorrer um erro
  */
-elemento* lista_remove(lista *lst, elemento *pos);
+elemento *lista_remove(lista *lst, elemento *pos);
 
 /**
  *  devolve a posicao do primeiro elemento da lista com a string especificada
@@ -90,7 +88,7 @@ elemento* lista_remove(lista *lst, elemento *pos);
  *  parametro: origem origem da pesquisa: a partir do início (INICIO) ou a partir do fim (FIM)
  *  retorno: elemento ou NULL se nao encontrar elemento ou ocorrer um erro
  */
-elemento* lista_pesquisa(lista *lst, const char* str, int origem);
+elemento *lista_pesquisa(lista *lst, const char *str, int origem);
 
 /**
  *  ordena uma lista por ordem alfabetica
