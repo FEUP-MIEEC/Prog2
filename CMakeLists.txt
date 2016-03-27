@@ -28,4 +28,5 @@ add_executable(2.3.2 Aula2_Alocacao_dinamica_de_memoria_e_vetores/03.2_.c Aula2_
 add_executable(2.3.3 Aula2_Alocacao_dinamica_de_memoria_e_vetores/03.3_.c)
 add_executable(3.1 Aula3_vetores_e_algoritmos_de_pesquisa_e_ordenacao/01.c Aula3_vetores_e_algoritmos_de_pesquisa_e_ordenacao/vetor.c Aula3_vetores_e_algoritmos_de_pesquisa_e_ordenacao/vetor.h)
 add_executable(3.2 Aula3_vetores_e_algoritmos_de_pesquisa_e_ordenacao/02.c)
-add_executable(3.e.1 Aula3_vetores_e_algoritmos_de_pesquisa_e_ordenacao/Extras/para_debug.c)
+add_executable(3.e.3 Aula3_vetores_e_algoritmos_de_pesquisa_e_ordenacao/Extras/03.c)
+add_executable(4 Aula4_Trabalho1/lista-teste.c Aula4_Trabalho1/lista.c Aula4_Trabalho1/lista.h)
