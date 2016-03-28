@@ -1,5 +1,6 @@
 language: c
 compiler: clang
+before_install: sudo apt-get install -qq valgrind
 script:
 - chmod +x build.sh
 - "./build.sh"
