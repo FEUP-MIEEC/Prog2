@@ -7,5 +7,5 @@ clang -c lista.c
 clang lista-teste.c lista.o
 
 echo "Executing the compiled programs"
-./a.out| tee out/a.output
+valgrind --leak-check=full -v ./a.out| tee out/a.output
 
