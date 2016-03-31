@@ -12,7 +12,11 @@
  */
 contentor* contentor_novo(char* dest, float val)
 {
-	return NULL;
+	contentor* c= (contentor*) malloc(sizeof(contentor));
+	c->destino=malloc(sizeof(char)*((strlen(dest))+1));
+	strcpy(c->destino, dest);
+	c->valor=val;
+	return c;
 }
 
 /**
@@ -22,7 +26,8 @@ contentor* contentor_novo(char* dest, float val)
  */
 void contentor_apaga(contentor* contr)
 {
-
+	free(contr->destino);
+	free(contr);
 }
 
 /**

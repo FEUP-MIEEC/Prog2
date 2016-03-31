@@ -1,7 +1,7 @@
 #
 # This is an example Makefile for a countwords program.  This
 # program uses both the scanner module and a counter module.
-# Typing 'make' or 'make lista' will create the executable file.
+# Typing 'make' or 'make armazem' will create the executable file.
 #
 
 # define some Makefile variables for the compiler and compiler flags
