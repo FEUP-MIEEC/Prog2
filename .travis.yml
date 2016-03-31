@@ -13,4 +13,4 @@ notifications:
   slack:
     rooms:
       - emptystack:uY0KFjhVs3b2XoW2aI1GkjqA#prog2
-      - emptystack:uY0KFjhVs3b2XoW2aI1GkjqA#programmers
+#      - emptystack:uY0KFjhVs3b2XoW2aI1GkjqA#programmers
