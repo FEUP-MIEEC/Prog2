@@ -1,150 +1,137 @@
-
 #include "fila_contentores.h"
 #include <stdlib.h>
 
-filaItem* fila_novo_elemento(pilha* valor)
-{
-	/* aloca memoria para a estrutura filaItem */
-	filaItem *item = (filaItem *) malloc(sizeof(filaItem));
-	if(item == NULL) 
-		return NULL;
+filaItem *fila_novo_elemento(pilha *valor) {
+    /* aloca memoria para a estrutura filaItem */
+    filaItem *item = (filaItem *) malloc(sizeof(filaItem));
+    if (item == NULL)
+        return NULL;
 
-	/* aponta para pilha de contentores (novo elemento) */
-	item->elemento = valor;
-	if(item->elemento == NULL) 
-	{
-		free(item);
-		return NULL;
-	}
+    /* aponta para pilha de contentores (novo elemento) */
+    item->elemento = valor;
+    if (item->elemento == NULL) {
+        free(item);
+        return NULL;
+    }
 
-	/* item ainda nao tem proximo */
-	item->proximo = NULL;
+    /* item ainda nao tem proximo */
+    item->proximo = NULL;
 
-	return item;
+    return item;
 }
 
-fila* fila_nova()
-{
-	/* cria fila */
-	fila *f = (fila*) malloc(sizeof(fila));
-	if(f == NULL)
-		return NULL;
-	
-	/* fila esta' vazia */
-	f->raiz = NULL;
-	f->tamanho = 0;
+fila *fila_nova() {
+    /* cria fila */
+    fila *f = (fila *) malloc(sizeof(fila));
+    if (f == NULL)
+        return NULL;
 
-	return f; 
+    /* fila esta' vazia */
+    f->raiz = NULL;
+    f->tamanho = 0;
+
+    return f;
 }
 
 
-void fila_apaga(fila *f)
-{
-	filaItem *aux;
-	
-	if(f==NULL)
-		return;
+void fila_apaga(fila *f) {
+    filaItem *aux;
 
-	/* percorre toda a fila e liberta memoria de
-		 cada item e respectiva string */
-	while(f->raiz)
-	{
-		aux = f->raiz;
-		f->raiz = f->raiz->proximo;
-		pilha_apaga(aux->elemento);
-		free(aux);
-	}
-	
-	free(f);
+    if (f == NULL)
+        return;
 
-	return;
+    /* percorre toda a fila e liberta memoria de
+         cada item e respectiva string */
+    while (f->raiz) {
+        aux = f->raiz;
+        f->raiz = f->raiz->proximo;
+        pilha_apaga(aux->elemento);
+        free(aux);
+    }
+
+    free(f);
+
+    return;
 }
 
 
-int fila_tamanho(fila *f)
-{
-	if (f == NULL)
-		return -1;
+int fila_tamanho(fila *f) {
+    if (f == NULL)
+        return -1;
 
-	return f->tamanho;
+    return f->tamanho;
 }
 
 
-pilha* fila_front(fila *f)
-{ 
-	filaItem *aux;
+pilha *fila_front(fila *f) {
+    filaItem *aux;
 
-	if (f == NULL || f->tamanho == 0)
-		return NULL;
-	
-	aux = f->raiz;
-	return aux->elemento;
+    if (f == NULL || f->tamanho == 0)
+        return NULL;
+
+    aux = f->raiz;
+    return aux->elemento;
 }
 
-pilha* fila_back(fila *f)
-{ 
-	filaItem *aux;
+pilha *fila_back(fila *f) {
+    filaItem *aux;
 
-	if (f == NULL || f->tamanho == 0)
-		return NULL;
-	
-	aux = f->raiz;
-	/* percorre fila ate' ao fim */
-	while (aux->proximo != NULL)
-		aux = aux->proximo;
+    if (f == NULL || f->tamanho == 0)
+        return NULL;
 
-	return aux->elemento;
+    aux = f->raiz;
+    /* percorre fila ate' ao fim */
+    while (aux->proximo != NULL)
+        aux = aux->proximo;
+
+    return aux->elemento;
 }
 
-void fila_push(fila *f, pilha* valor)
-{
-	int i=0;
-	filaItem *curr = NULL, *temp;
+void fila_push(fila *f, pilha *valor) {
+    int i = 0;
+    filaItem *curr = NULL, *temp;
 
-	if (f == NULL)
-		return;
-	
-	temp = f->raiz;
+    if (f == NULL)
+        return;
 
-	/* cria novo item */
-	curr = fila_novo_elemento(valor);
-	
-	if (curr == NULL)
-				return;
-	
-	f->tamanho++;
-	
-	/* inserir no fim da fila */
-	/* se e' primeiro elemento */
-	if (temp == NULL)
-	{
-		f->raiz = curr;	 
-		return;		
-	}
+    temp = f->raiz;
 
-	/* percorre fila ate' chegar ao ultimo item */
-	while (temp->proximo != NULL) 
-	{
-		temp = temp->proximo;	
-	}
-	temp->proximo = curr;
+    /* cria novo item */
+    curr = fila_novo_elemento(valor);
+
+    if (curr == NULL)
+        return;
+
+    f->tamanho++;
+
+    /* inserir no fim da fila */
+    /* se e' primeiro elemento */
+    if (temp == NULL) {
+        f->raiz = curr;
+        return;
+    }
+
+    /* percorre fila ate' chegar ao ultimo item */
+    while (temp->proximo != NULL) {
+        temp = temp->proximo;
+    }
+    temp->proximo = curr;
 }
 
-void fila_pop(fila *f)
-{
-	int i = 0;
-	filaItem *curr;
+void fila_pop(fila *f) {
+    int i = 0;
+    filaItem *curr;
 
-	if (f == NULL || f->tamanho == 0)
-		return;
-	
-	curr = f->raiz;
+    if (f == NULL || f->tamanho == 0)
+        return;
 
-	/* proximo elemento passa a ser primeiro */
-	f->tamanho--;
-	f->raiz = curr->proximo;	
+    curr = f->raiz;
 
-	/* liberta memoria associada ao item removido */
-	pilha_apaga(curr->elemento);
-	free(curr);
+    /* proximo elemento passa a ser primeiro */
+    f->tamanho--;
+    f->raiz = curr->proximo;
+
+    /* liberta memoria associada ao item removido */
+    pilha_apaga(curr->elemento);
+    free(curr);
 }

@@ -1,5 +1,5 @@
 /*****************************************************************/
-/*          Biblioteca vetor | PROG2 | MIEEC | 2015/16           */      
+/*          Biblioteca vetor | PROG2 | MIEEC | 2015/16           */
 /*****************************************************************/
 
 #ifndef VETOR_H
@@ -8,26 +8,24 @@
 /**
  * registo para armazenar cada elemento (apenas uma string neste caso)
 */
-typedef struct
-{
+typedef struct {
     char *str;
-    
+
 } velemento;
 
 /**
 * este registo contem um vetor de elementos, um contador do tamanho e outro para a capacidade
 */
-typedef struct
-{
-	/** numero de elementos do vetor */
-	int tamanho;
-    
+typedef struct {
+    /** numero de elementos do vetor */
+    int tamanho;
+
     /** capacidade do vetor */
     int capacidade;
-	
+
     /** array de elementos armazenados */
-	velemento* elementos;
-    
+    velemento *elementos;
+
 } vetor;
 
 /** 
@@ -35,7 +33,7 @@ typedef struct
  *  retorno: apontador para o vetor criado
  *  nota: se vetor nao foi criado retorna NULL
  */
-vetor* vetor_novo();
+vetor *vetor_novo();
 
 /** 
  *  elimina um vetor, libertando toda a memoria ocupada
@@ -58,7 +56,7 @@ int vetor_tamanho(vetor *vec);
  *  retorno: apontador para a string na posicao correspondente
  *  nota: se ocorrer algum erro retorna NULL (p.ex. se valor pos indicar uma posicao invalida)
  */
-const char* vetor_elemento(vetor *vec, int pos);
+const char *vetor_elemento(vetor *vec, int pos);
 
 /**
  *  insere um elemento na posicao especificada
@@ -68,7 +66,7 @@ const char* vetor_elemento(vetor *vec, int pos);
  *  retorno: -1 se ocorrer algum erro (p.ex. se valor pos indicar uma posicao invalida) ou o valor de pos se bem sucedido
  *  nota: se a capacidade nao for suficiente para guardar novo elemento, devera ser aumentada para 2x em relacao a capacidade anterior; inicialmente aumenta para capacidade 1
  */
-int vetor_insere(vetor *vec, const char* valor, int pos);
+int vetor_insere(vetor *vec, const char *valor, int pos);
 
 /**
  *  remove o elemento da posicao especificada
@@ -76,7 +74,7 @@ int vetor_insere(vetor *vec, const char* valor, int pos);
  *  parametro: pos posicao
  *  retorno: -1 se ocorrer algum erro (p.ex. se valor pos indicar uma posicao invalida) ou 0 se bem sucedido
  */
-int vetor_remove(vetor* vec, int pos);
+int vetor_remove(vetor *vec, int pos);
 
 /** 
  *  atribui o valor especificado a uma posicao 
@@ -85,7 +83,7 @@ int vetor_remove(vetor* vec, int pos);
  *  parametro: str string pretendida
  *  retorno: -1 se ocorrer algum erro (p.ex. se valor pos indicar uma posicao invalida) ou pos se bem sucedido 
  */
-int vetor_atribui(vetor *vec, int pos, const char* str);
+int vetor_atribui(vetor *vec, int pos, const char *str);
 
 /**
  *  devolve a posicao do elemento especificado
@@ -93,7 +91,7 @@ int vetor_atribui(vetor *vec, int pos, const char* str);
  *  parametro: str string pretendida
  *  retorno: posicao do elemento ou -1 se ocorrer algum erro ou nao encontrar elemento
  */
-int vetor_pesquisa(vetor *vec, const char* str);
+int vetor_pesquisa(vetor *vec, const char *str);
 
 /**
  *  ordena um vetor por ordem alfabetica

@@ -11,24 +11,22 @@
 *   este registo cont�m um apontador para um contentor
 *   e um apontador para o pr�ximo elemento da pilha
 */
-typedef struct item_p
-{
-	/** \brief contentor armazenado */
-	contentor* elemento;
-  struct item_p *proximo;
+typedef struct item_p {
+    /** \brief contentor armazenado */
+    contentor *elemento;
+    struct item_p *proximo;
 } pilhaItem;
 
-typedef struct
-{
-	pilhaItem *raiz;
-	int tamanho;
+typedef struct {
+    pilhaItem *raiz;
+    int tamanho;
 } pilha;
 
 /**
  *  \brief cria uma nova pilha vazia
  *  \return apontador para a pilha
  */
-pilha* pilha_nova();
+pilha *pilha_nova();
 
 /**
  *  \brief elimina uma pilha, libertando toda a mem�ria ocupada
@@ -49,14 +47,14 @@ int pilha_tamanho(pilha *p);
  *  \param l apontador para a pilha
  *  \return apontador para o contentor no topo da pilha
  */
-contentor* pilha_top(pilha *p);
+contentor *pilha_top(pilha *p);
 
 /**
  *  \brief insere um novo elemento no topo da pilha
  *  \param l apontador para a pilha
  *  \param contr elemento pretendido
  */
-void pilha_push(pilha *p, contentor* contr);
+void pilha_push(pilha *p, contentor *contr);
 
 /**
  *  \brief retira o elemento no topo da pilha

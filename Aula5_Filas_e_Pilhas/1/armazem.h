@@ -13,14 +13,14 @@
  */
 typedef struct {
 
-	/** \brief numero maximo de pilhas de contentores (tamanho da fila) */
-	int comprimento;
+    /** \brief numero maximo de pilhas de contentores (tamanho da fila) */
+    int comprimento;
 
-	/** \brief numero maximo de contentores numa pilha (tamanho da pilha) */
-	int altura;
+    /** \brief numero maximo de contentores numa pilha (tamanho da pilha) */
+    int altura;
 
-	/** \brief fila de pilhas de contentores (coluna) */
-	fila* contentores;
+    /** \brief fila de pilhas de contentores (coluna) */
+    fila *contentores;
 
 } armazem;
 
@@ -31,7 +31,7 @@ typedef struct {
  *  \param altura valor maximo da altura das pilhas de contentores
  *  \return apontador para o armazem ou NULL se erro na alocacao de memoria
  */
-armazem* armazem_novo(int comprimento, int altura);
+armazem *armazem_novo(int comprimento, int altura);
 
 /* alinea c) */
 /**
@@ -39,7 +39,7 @@ armazem* armazem_novo(int comprimento, int altura);
  *  \param armz apontador para o armazem
  *  \return 1 se armazem vazio; 0 se contem contentores
  */
-int armazem_vazio(armazem* armz);
+int armazem_vazio(armazem *armz);
 
 /* alinea d) */
 /**
@@ -47,7 +47,7 @@ int armazem_vazio(armazem* armz);
  *  \param armz apontador para o armazem
  *  \return 1 se armazem nao pode receber mais contentores; 0 se pode
  */
-int armazem_cheio(armazem* armz);
+int armazem_cheio(armazem *armz);
 
 /* alinea e) */
 /**
@@ -58,7 +58,7 @@ int armazem_cheio(armazem* armz);
  *  \remark contentor e' carregado na primeira pilha; quando a pilha
  *    esta' completa comeca a empilhar noutra;
  */
-int armazenar_contentor(armazem* armz, contentor* contr);
+int armazenar_contentor(armazem *armz, contentor *contr);
 
 /* alinea f) */
 /**
@@ -67,7 +67,7 @@ int armazenar_contentor(armazem* armz, contentor* contr);
  *  \return apontador para o contentor retirado ou NULL se armazem vazio
  *  \remark contentor e' retirado da pilha mais proxima do navio
  */
-contentor* expedir_contentor(armazem* armz);
+contentor *expedir_contentor(armazem *armz);
 
 #define ARMAZEM_H
 #endif

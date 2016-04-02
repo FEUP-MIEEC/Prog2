@@ -8,30 +8,28 @@
 
 /** 
 * \brief registo para armazenar elementos da fila
-*   este registo contém um apontador para uma pilha de contentores
-*   e um apontador para o próximo elemento da fila
+*   este registo contï¿½m um apontador para uma pilha de contentores
+*   e um apontador para o prï¿½ximo elemento da fila
 */
-typedef struct item_f
-{
-	/** \brief pilha de contentores armazenada */
-	pilha* elemento;
-  struct item_f *proximo;
+typedef struct item_f {
+    /** \brief pilha de contentores armazenada */
+    pilha *elemento;
+    struct item_f *proximo;
 } filaItem;
 
-typedef struct
-{
-	filaItem *raiz;
-	int tamanho;
+typedef struct {
+    filaItem *raiz;
+    int tamanho;
 } fila;
 
 /**
  *  \brief cria uma nova fila vazia
  *  \return apontador para a fila
  */
-fila* fila_nova();
+fila *fila_nova();
 
 /** 
- *  \brief elimina uma fila, libertando toda a memória ocupada
+ *  \brief elimina uma fila, libertando toda a memï¿½ria ocupada
  *  \param l apontador para a fila
  *  \remark se fila = NULL retorna sem fazer nada
  */
@@ -49,21 +47,21 @@ int fila_tamanho(fila *f);
  *  \param f apontador para a fila
  *  \return apontador para a pilha no inicio da fila
  */
-pilha* fila_front(fila *f);
+pilha *fila_front(fila *f);
 
 /** 
  *  \brief retorna a pilha armazenada no fim da fila - ultimo elemento que entrou
  *  \param f apontador para a fila
  *  \return apontador para a pilha no fim da fila
  */
-pilha* fila_back(fila *f);
+pilha *fila_back(fila *f);
 
 /** 
  *  \brief insere uma nova pilha no fim da fila
  *  \param f apontador para a fila
  *  \param valor pilha pretendida
  */
-void fila_push(fila *f, pilha* valor);
+void fila_push(fila *f, pilha *valor);
 
 /**
  *  \brief retira a pilha no inicio da fila
