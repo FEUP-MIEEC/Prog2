@@ -7,21 +7,52 @@
 /* problema 1.1 */
 int tira_carta(lista* baralho, lista* ordem)
 {
-	return 0;
+	int gotit=0, c=0;
+	char* a=ordem->inicio->str;
+	elemento* next=ordem->inicio->proximo;
+	
+	while(strcmp(a, baralho->inicio->str )!=0){
+		a=next->str;
+		next=next->proximo;
+		c++;
+	}
+	lista_remove(baralho, baralho->inicio);
+	return c;
 }
 
 /* problema 1.2 */
 char* faz_jogada(vetor *jogadores, lista *baralho, lista *ordem)
 {
-	return NULL;
+	int i;
+	int* res=malloc(sizeof(int)*jogadores->tamanho);
+	for(i=0; i < jogadores->tamanho; i++){
+		res[i]=tira_carta(baralho, ordem);
+	};
+	int max=-1;
+	int idmax=-1;
+	for(i=0; i < jogadores->tamanho; i++){
+		if(res[i]>max){
+			max=res[i];
+			idmax=i;
+		}
+	}
+	free(res);
+	return jogadores->elementos[idmax].str;
 }
 
 /* problema 1.3 */
 int numero_vitorias(vetor *vencedores, const char *nome)
 {
-	/* complexidade do algoritmo: ______ */
+	/* complexidade do algoritmo: O(n) */
+	
+	int i, c=0;
+	for(i=0; i<vencedores->tamanho;i++){
+		if(strcmp(nome, vencedores->elementos[i].str)==0){
+			c++;
+		}
+	}
 
-	return 0;
+	return c;
 }
 
 /***************************************************/
@@ -38,6 +69,7 @@ char *vencedores_[] = {"Rui", "Ana", "Ana", "Ana", "Rui", "Sara", "Miguel",
 
 void insere_carta(lista* baralho, int valor)
 {
+	//printf("A inserir: %d:", valor);
 	char str[4];
 	if(valor < 8)
 		sprintf(str, "%c", valor+'2');
@@ -52,6 +84,7 @@ void insere_carta(lista* baralho, int valor)
 	else if(valor == 12)
 		strcpy(str, "A");
 	lista_insere(baralho, str, baralho->inicio);
+	//printf(" %s\n", str);
 }
 
 int main()
@@ -73,7 +106,7 @@ int main()
 	ordem = lista_nova();
 	for(i=0; i<13; i++)
 		lista_insere(ordem, cartas_[i], NULL);
-
+	
 	/* testa alínea 1.1 */
 	fprintf(stderr, "Valor da primeira carta: %d\n", tira_carta(baralho, ordem));
 	fprintf(stderr, "Valor da segunda carta: %d\n", tira_carta(baralho, ordem));
@@ -81,7 +114,7 @@ int main()
 	insere_carta(baralho, baralho_[49]);
 	insere_carta(baralho, baralho_[50]);
 	insere_carta(baralho, baralho_[51]);
-
+	
 	/* testa alínea 1.2 */
 	jogadas = vetor_novo();
 	for(i=0; i<13; i++)
