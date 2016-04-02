@@ -1,0 +1,17 @@
+Palavras encontradas:
+------------------------------
+1: Maria: (2)
+2: Eu (3)
+3: adoro (2)
+4: Prog2. (3)
+5: E (1)
+6: tu? (1)
+7: Manel: (2)
+8: +/-... (1)
+9: Prog2 (1)
+10: porque (1)
+11: eu (1)
+12: aprendi (2)
+13: muito (2)
+14: com (2)
+15: tambem (1)
