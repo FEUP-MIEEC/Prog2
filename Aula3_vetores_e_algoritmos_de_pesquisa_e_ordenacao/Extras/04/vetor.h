@@ -1,33 +1,31 @@
 /*****************************************************************/
-/*          Biblioteca vetor | PROG2 | MIEEC | 2014/15           */      
+/*          Biblioteca vetor | PROG2 | MIEEC | 2014/15           */
 /*****************************************************************/
 
 #ifndef VETOR_H
 
-typedef struct
-{
-	//votos	(int),	a	classificação	(float),	o	título	(string)	e	o	ano	(int)
-	int votes;
-	float rank;
-	char * title;
-	int year;
-    
+typedef struct {
+    //votos	(int),	a	classificação	(float),	o	título	(string)	e	o	ano	(int)
+    int votes;
+    float rank;
+    char *title;
+    int year;
+
 } elemento;
 
 /**
 * este registo contem um vetor de elementos, um contador do tamanho e outro para a capacidade
 */
-typedef struct
-{
-	/** numero de elementos do vetor */
-	int tamanho;
-    
+typedef struct {
+    /** numero de elementos do vetor */
+    int tamanho;
+
     /** capacidade do vetor */
     int capacidade;
-	
+
     /** array de elementos armazenados */
-	elemento* elementos;
-    
+    elemento *elementos;
+
 } vetor;
 
 /** 
@@ -35,7 +33,7 @@ typedef struct
  *  retorno: apontador para o vetor criado
  *  nota: se vetor nao foi criado retorna NULL
  */
-vetor* vetor_novo();
+vetor *vetor_novo();
 
 /** 
  *  elimina um vetor, libertando toda a memoria ocupada
@@ -59,7 +57,7 @@ int vetor_tamanho(vetor *vec);
  *  retorno: -1 se ocorrer algum erro (p.ex. se valor pos indicar uma posicao invalida) ou o valor de pos se bem sucedido
  *  nota: se a capacidade nao for suficiente para guardar novo elemento, devera ser aumentada para 2x em relacao a capacidade anterior; inicialmente aumenta para capacidade 1
  */
-int vetor_insere(vetor* vec, const char* valor, int votes, float rank, int year, int pos);
+int vetor_insere(vetor *vec, const char *valor, int votes, float rank, int year, int pos);
 
 /**
  *  devolve a posicao do elemento especificado
@@ -67,7 +65,7 @@ int vetor_insere(vetor* vec, const char* valor, int votes, float rank, int year,
  *  parametro: str string pretendida
  *  retorno: posicao do elemento ou -1 se ocorrer algum erro ou nao encontrar elemento
  */
-int vetor_pesquisa(vetor *vec, const char* str);
+int vetor_pesquisa(vetor *vec, const char *str);
 
 /**
  *  ordena um vetor por ordem alfabetica
@@ -81,9 +79,9 @@ int vetor_ordena(vetor *vec);
  *  parametro: vec apontador para vetor
  *  retorno: -1 se ocorrer um erro ou 0 se for bem sucedido  
  */
-int vetor_ordena_ano(vetor* vec);
+int vetor_ordena_ano(vetor *vec);
 
-vetor * vetor_pesquisa_ano(vetor* vec, int year);
+vetor *vetor_pesquisa_ano(vetor *vec, int year);
 
 #define VETOR_H
 #endif
