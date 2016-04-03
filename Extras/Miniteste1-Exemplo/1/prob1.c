@@ -26,8 +26,7 @@ vetor *interseta(lista *l1, lista *l2) {
     elemento *e = l1->inicio;
     int i, j = 0;
     for (i = 0; i < l1->tamanho || e != NULL; i++) {
-        if (strcmp(e->str, lista_pesquisa(l2, e->str, INICIO) == NULL ? "" : lista_pesquisa(l2, e->str, INICIO)->str) ==
-            0) {
+        if (lista_pesquisa(l2, e->str, INICIO) != NULL && strcmp(e->str, lista_pesquisa(l2, e->str, INICIO)->str) == 0) {
             vetor_insere(v, e->str, j);
             j++;
         }
@@ -37,15 +36,12 @@ vetor *interseta(lista *l1, lista *l2) {
 }
 
 vetor *anteriores(lista *lst, const int ano) {
-    int i = 0;
     vetor *v;
-    elemento *e;
     v = vetor_novo();
-    for (e = lst->inicio; e != NULL; e = e->proximo) {
-        if (lista_pesquisa(lst, e->str, INICIO) && atoi(e->str + strlen(e->str) - 5) < ano) {
-            vetor_insere(v, e->str, i);
-            i++;
-        }
+    elemento *aux;
+    for (aux = lst->inicio; aux != NULL; aux = aux->proximo) {
+        if (atoi((aux->str + strlen(aux->str) - 5)) < ano)
+            vetor_insere(v, aux->str, v->tamanho);
     }
     return v;
 }

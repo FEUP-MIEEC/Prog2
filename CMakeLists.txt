@@ -32,3 +32,4 @@ add_executable(3.e.3 Aula3_Vetores_e_algoritmos_de_pesquisa_e_ordenacao/Extras/0
 add_executable(4 Aula4_Trabalho1/lista-teste.c Aula4_Trabalho1/lista.c Aula4_Trabalho1/lista.h)
 add_executable(MTE1.1 Extras/Miniteste1-Exemplo/1/prob1.c Extras/Miniteste1-Exemplo/1/vetor.c Extras/Miniteste1-Exemplo/1/vetor.h Extras/Miniteste1-Exemplo/1/lista.c Extras/Miniteste1-Exemplo/1/lista.h)
 add_executable(MTE1.2 Extras/Miniteste1-Exemplo/2/prob2.c)
+add_executable(MTE2.1 Extras/Miniteste2-Exemplo/1/prob1.c Extras/Miniteste2-Exemplo/1/vetor.c Extras/Miniteste2-Exemplo/1/vetor.h Extras/Miniteste2-Exemplo/1/lista.c Extras/Miniteste2-Exemplo/1/lista.h)
