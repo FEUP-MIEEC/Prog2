@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-sudo find . -name makefile |
+find . -name makefile |
 while read p
 do
 	cdir=`readlink -f .`
