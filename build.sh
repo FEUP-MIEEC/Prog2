@@ -10,6 +10,8 @@ do
    figlet-2.2.5/figlet -d figlet-2.2.5/fonts " => Aula "$i; cd Aula$i*; chmod +x build.sh; ./build.sh; cd ..
 done
 
+figlet-2.2.5/figlet -d figlet-2.2.5/fonts " => Extras"; cd Extras; chmod +x build.sh; ./build.sh; cd ..
+
 rm -r figlet-2.2.5
 
 chmod +x git.sh
