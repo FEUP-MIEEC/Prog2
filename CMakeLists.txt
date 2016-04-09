@@ -33,3 +33,5 @@ add_executable(4 Aula4_Trabalho1/lista-teste.c Aula4_Trabalho1/lista.c Aula4_Tra
 add_executable(MTE1.1 Extras/Miniteste1-Exemplo/1/prob1.c Extras/Miniteste1-Exemplo/1/vetor.c Extras/Miniteste1-Exemplo/1/vetor.h Extras/Miniteste1-Exemplo/1/lista.c Extras/Miniteste1-Exemplo/1/lista.h)
 add_executable(MTE1.2 Extras/Miniteste1-Exemplo/2/prob2.c)
 add_executable(MTE2.1 Extras/Miniteste2-Exemplo/1/prob1.c Extras/Miniteste2-Exemplo/1/vetor.c Extras/Miniteste2-Exemplo/1/vetor.h Extras/Miniteste2-Exemplo/1/lista.c Extras/Miniteste2-Exemplo/1/lista.h)
+add_executable(MTE2.2 Extras/Miniteste2-Exemplo/2/prob2.c)
+add_executable(3.Challenge Aula6_Challenge/challenge.c)
