@@ -34,4 +34,5 @@ add_executable(MTE1.1 Extras/Miniteste1-Exemplo/1/prob1.c Extras/Miniteste1-Exem
 add_executable(MTE1.2 Extras/Miniteste1-Exemplo/2/prob2.c)
 add_executable(MTE2.1 Extras/Miniteste2-Exemplo/1/prob1.c Extras/Miniteste2-Exemplo/1/vetor.c Extras/Miniteste2-Exemplo/1/vetor.h Extras/Miniteste2-Exemplo/1/lista.c Extras/Miniteste2-Exemplo/1/lista.h)
 add_executable(MTE2.2 Extras/Miniteste2-Exemplo/2/prob2.c)
-add_executable(3.Challenge Aula6_Challenge/challenge.c)
+add_executable(6.Challenge Aula6_Challenge/challenge.c)
+add_executable(7.1 Aula7_Arvores/arvores-teste.c Aula7_Arvores/avl.c Aula7_Arvores/avl.h Aula7_Arvores/bst.c Aula7_Arvores/bst.h)
