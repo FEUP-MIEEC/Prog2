@@ -82,7 +82,7 @@ const char *bst_max(arvore_bst *bst) {
 void bst_imprime(arvore_bst *bst) {
     if (bst == NULL)
         return;
-
+    printf("Conteudo: ");
     bst_preordem_impl(bst->raiz);
 
     printf("\n");
@@ -213,26 +213,25 @@ no_bst *bst_remove_impl(no_bst *no, const char *str) {
     return no;
 }
 
-int bst_altura (no_bst* no)
-{
+int bst_altura(no_bst *no) {
     /* a implementar na alinea 1.b) */
-    int r = 0, l = 0;
-    if(no == NULL)
+    int a1 = 0, a2 = 0;
+    if (no == NULL)
         return -1;
-    else
-    {
-        printf("teste");
-        r += bst_altura(no->direita);
-        l += bst_altura(no->esquerda);
-
-        if(r > l)
-            return (r + 1);
-        else
-            return (l + 1);
+    if (no->direita == NULL && no->esquerda == NULL) return 0;
+    else {
+        a1 = bst_altura(no->esquerda);
+        a2 = bst_altura(no->direita);
+        if (a1 > a2) return 1 + bst_altura(no->esquerda);
+        else return 1 + bst_altura(no->direita);
     }
 }
 
 void bst_preordem_impl(no_bst *no) {
     /* a implementar na alinea 1.c) */
+    if (no == NULL) return;
+    printf("%s ", no->str);
+    bst_preordem_impl(no->esquerda);
+    bst_preordem_impl(no->direita);
     return;
 }

@@ -15,6 +15,7 @@ typedef struct no_avl_
 	struct no_avl_ *direita;
 	int altura;
 	/* exercicio 3.a)... */
+	int cont;
 } no_avl;
 
 /**
