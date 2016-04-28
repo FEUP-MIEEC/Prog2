@@ -5,7 +5,7 @@ cd figlet-2.2.5
 make &> /dev/null
 cd ..
 
-for i in 1 2 4 5
+for i in 1 2 5 6
 do
    figlet-2.2.5/figlet -d figlet-2.2.5/fonts " => Aula "$i; cd Aula$i*; chmod +x build.sh; ./build.sh; cd ..
 done
