@@ -1,0 +1,45 @@
+12	Alan J. Perlis
+91	Maurice V. Wilkes
+16	Richard Hamming
+18	Marvin Minsky
+43	James H. Wilkinson
+28	John McCarthy
+81	Edsger W. Dijkstra
+47	Charles W. Bachman
+11	Donald E. Knuth
+34	Allen Newell and Herbert A. Simon
+17	Michael O. Rabin and Dana S. Scott
+19  John Backus
+45	Robert W. Floyd
+12	Kenneth E. Iverson
+19	C. Antony R. Hoare
+23	Edgar F. Codd
+44	Stephen A. Cook
+01	Ken Thompson and Dennis M. Ritchie
+12	Niklaus Wirth
+67	Richard M. Karp
+13	John Hopcroft and Robert Tarjan
+10	John Cocke
+03	Ivan Sutherland
+56	William (Velvel) Kahan
+18	Fernando J. Corbató
+19	Robin Milner
+45	Butler W. Lampson
+58	Juris Hartmanis and Richard E. Stearns
+59	Edward Feigenbaum and Raj Reddy
+12  Manuel Blum
+15	Amir Pnueli
+23	Douglas Engelbart
+51	Jim Gray
+49	Frederick P. Brooks, Jr.
+47	Andrew Chi-Chih Yao
+47	Ole-Johan Dahl and Kristen Nygaard
+51	Ronald L. Rivest, Adi Shamir and Leonard M. Adleman
+34	Alan Kay
+23	Vinton G. Cerf and Robert E. Kahn
+24	Peter Naur
+42	Frances E. Allen
+08	Edmund M. Clarke, E. Allen Emerson and Joseph Sifakis
+05	Barbara Liskov
+47	Charles P. Thacker
+46	Leslie G. Valiant

@@ -2,3 +2,4 @@
 *.xml
 .idea/.name
 *.iml
+*.out
