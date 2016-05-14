@@ -30,6 +30,7 @@ add_executable(3.1 Aula3_Vetores_e_algoritmos_de_pesquisa_e_ordenacao/01.c Aula3
 add_executable(3.2 Aula3_Vetores_e_algoritmos_de_pesquisa_e_ordenacao/02.c)
 add_executable(3.e.3 Aula3_Vetores_e_algoritmos_de_pesquisa_e_ordenacao/Extras/03.c)
 add_executable(4 Aula4_Listas_T1/lista-teste.c Aula4_Listas_T1/lista.c Aula4_Listas_T1/lista.h)
+add_executable(5.1 Aula5_Filas_e_Pilhas/1/teste_armazem.c Aula5_Filas_e_Pilhas/1/armazem.h Aula5_Filas_e_Pilhas/1/armazem.c Aula5_Filas_e_Pilhas/1/contentor.h Aula5_Filas_e_Pilhas/1/contentor.c Aula5_Filas_e_Pilhas/1/fila_contentores.c Aula5_Filas_e_Pilhas/1/fila_contentores.h Aula5_Filas_e_Pilhas/1/pilha_contentores.c Aula5_Filas_e_Pilhas/1/pilha_contentores.h)
 add_executable(MTE1.1 Extras/Miniteste1-Exemplo/1/prob1.c Extras/Miniteste1-Exemplo/1/vetor.c Extras/Miniteste1-Exemplo/1/vetor.h Extras/Miniteste1-Exemplo/1/lista.c Extras/Miniteste1-Exemplo/1/lista.h)
 add_executable(MTE1.2 Extras/Miniteste1-Exemplo/2/prob2.c)
 add_executable(MTE2.1 Extras/Miniteste2-Exemplo/1/prob1.c Extras/Miniteste2-Exemplo/1/vetor.c Extras/Miniteste2-Exemplo/1/vetor.h Extras/Miniteste2-Exemplo/1/lista.c Extras/Miniteste2-Exemplo/1/lista.h)
