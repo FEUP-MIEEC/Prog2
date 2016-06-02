@@ -1,0 +1,9 @@
+cima 33
+direita 10
+esquerda 25
+esquerda 14
+direita 27
+esquerda 19
+baixo 29
+baixo 23
+cima 31
