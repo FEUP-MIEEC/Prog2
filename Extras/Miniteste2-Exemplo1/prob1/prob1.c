@@ -6,28 +6,10 @@
 
 void avl_max_subarvore(arvore_avl *arv, const char *inicio)
 {
-	/*arvore_avl *a = avl_nova();
+	arvore_avl *a = avl_nova();
 	a->raiz = avl_pesquisa(arv, inicio);
-	printf("%s", avl_max(a));*/
-
-	if(!arv || !inicio)
-		return;
-
-	no_avl* node = avl_pesquisa(arv, inicio), *tmp;
-	if(!node)
-		return;
-
-	char *max = node->str;
-	while(node != NULL)
-	{
-		if(strcmp(node->str, max) > 0)
-			max = node->str;
-
-		node = node->direita;
-	}
-
-	printf("%s", max);	
-
+	printf("%s", avl_max(a));
+	free(a);
 }
 
 
