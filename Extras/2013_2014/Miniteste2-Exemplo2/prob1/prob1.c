@@ -17,8 +17,7 @@ pilha* vetor_pilha (vetor *v)
 int tabela_redimensiona(tabela_dispersao td, int novo_tamanho)
 {
 	/* prob 1.2 - a implementar */
-	
-	return NULL;
+	return 0;
 }
 
 lista* descobre_segredo(arvore_avl *avl, lista *l)
@@ -26,15 +25,6 @@ lista* descobre_segredo(arvore_avl *avl, lista *l)
 	/* prob 1.3 - a implementar */
 	return NULL;
 }
-
-void descobre_segredo_recurs(no_avl *no, lista *l)
-{
-	/* prob 1.3 extra - a implementar */
-
-	return;
-
-}
-
 
 /* v-- nao alterar funcao main --v */
 

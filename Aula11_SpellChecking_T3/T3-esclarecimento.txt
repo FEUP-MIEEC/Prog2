@@ -1,0 +1,36 @@
+*** Definição de palavras ***
+
+Uma palavra é definida por um número arbitrário de letras (a-z) e apóstrofes ('), tendo que ter pelo menos uma letra. Todos os outros carácteres devem ser considerados separadores de palavras. Por exemplo, os seguintes textos devem ser separados nas palavras indicadas:
+   day-to-day ---> [day, to, day]
+   hello!are you ok? ---> [hello, are, you, ok]
+   "i'm fine"thanks... ---> [i'm, fine, thanks]
+   in problem 3 (for example: "supre%") ---> [in, problem, for, example, supre]
+   --oops 'im sorry for teh/mistaek ---> [oops, 'im, sorry, for, teh, mistaek]
+   very weird.' quotes' '''' ' '' ---> [weird, quotes]
+
+*** Maiúsculas/minúsculas ***
+
+A verificação dos erros deve ser case-insentive, ou seja, a palavra "oscar" deve ser considerada correcta mesmo que no dicionário exista apenas a palavra "Oscar".
+
+*** Erros possíveis ***
+
+Apenas se devem considerar erros resultantes de trocas de quaisquer 2 letras da palavra. Por exemplo, para a palavra "thought", as seguintes trocas são possíveis:
+   thuoght (troca da 3a com a 4a letra)  
+   thouthg (troca da 5a com a 7a letra)
+   thhugot (troca da 3a com a 6a letra)
+
+O apóstrofe também pode ser trocado de posição.
+
+*** Output no modo verboso ***
+
+No modo verboso os erros devem ser apresentados por frase. Ou seja, primeiro é indicado a frase e depois os erros e as respectivas soluções. As frases são separadas por sinais de pontuação (.;?!) Por exemplo, para o parágrafo "This is a lnie of text that has a mispselling in it. Is it corretc?" o resultado deverá ser:
+
+This is a lnie of text that has a mispselling in it.
+      Word not found: lnie
+      Perhaps you meant: line
+      Word not found: mispselling
+      Perhaps you meant: misspelling
+
+Is it corretc?
+      Word not found: corretc
+      Perhaps you meant: correct

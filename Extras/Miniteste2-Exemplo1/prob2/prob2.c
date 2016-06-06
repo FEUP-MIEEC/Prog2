@@ -7,25 +7,46 @@
 
 int proximas_n_chegadas(lista *tempos, lista *origens, lista *aeroportos, int n) {
     /* prob 2.1 - a implementar */
-    int i, j;
-    elemento *t;
-    elemento *o;
-    elemento *a;
-    elemento *e;
-
-    heap *ep = heap_nova(25);
-	for (t = tempos->inicio, o = origens->inicio, a = aeroportos->inicio;
-         a != NULL && o != NULL && t != NULL;
-		 t = t->proximo, o = o->proximo, a = a->proximo) {
-			 heap_insere(ep, o->str , atoi(t->str));
-    }
-    for (i = 0; i < n; i++) {
-		e = aeroportos->inicio;
-		for(j=0; j<atoi(ep->elementos[i]->valor);j++){
-			e=e->proximo;
-		}
-        printf("%d: %s\n", i+1, e->str);
-    }
+    /* _1_> Alocar memória para lista de aeroportos. */
+	elemento *a=aeroportos->inicio; int i=0;
+	char** aero = malloc(sizeof(char**)*aeroportos->tamanho);
+	while(a!=NULL){	
+		aero[i]=malloc(sizeof(char*)*50);
+		strcpy(aero[i], a->str);
+		a=a->proximo;
+		i++;
+	}
+	
+	/* FIM _1_ */
+	
+	/* _2_> Inserir na Heap */
+	
+	heap* heapvoos=heap_nova(tempos->tamanho);
+	elemento* tempo=tempos->inicio;
+	elemento* orig=origens->inicio;
+	while(tempo!=NULL){
+		heap_insere(heapvoos, aero[atoi(orig->str)], atoi(tempo->str));
+		tempo=tempo->proximo;
+		orig=orig->proximo;
+	}
+	
+	// Libertar memória já não necessária
+	for(i=0; i<aeroportos->tamanho; i++){
+		free(aero[i]);
+	}
+	free(aero);
+	
+	/* FIM _2_*/
+	
+	/* _3_> Retirar da Heap */
+	
+	for(i=1; i<=5; i++){
+		printf("%i: %s\n", i, heap_remove(heapvoos));
+	}
+		
+	/* FIM _3_*/
+	
+	
     return 1;
 }
 

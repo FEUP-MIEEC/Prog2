@@ -1,0 +1,3 @@
+Tempo gasto na verificação (em segundos): XXXXXX
+Número de palavras com ortografia errada encontradas: 33486
+Número de sugestões efetuadas: 28888
