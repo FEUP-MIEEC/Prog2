@@ -1,0 +1,11 @@
+--- problema 3 - responder neste ficheiro ---
+
+* Estruturas de dados utilizadas:
+
+
+
+* Complexidade esperada:
+
+
+
+* Justificação sucinta:
