@@ -20,6 +20,8 @@ lista *descobre_caminho(grafo *g, int origem, int destino, int obrigatorio) {
         sprintf(s, "%d", c2[i]);
         lista_insere(lst, s, -1);
     }
+	free(c2);
+	free(c1);
     return lst;
 }
 
@@ -32,12 +34,13 @@ int simula_acontecimentos(lista *acoes, lista *tempos, int n) {
     heap *h = heap_nova(n);
     for (i = 0; i < n; i++) {
         strcpy(a, lista_elemento(acoes, i));
-        if (a == NULL) return 0;
+        
         heap_insere(h, a, atoi(lista_elemento(tempos, i)));
     }
     for (i = 0; i < n; i++) {
         printf("%d: %s\n", i + 1, h->elementos[i]->valor);
     }
+	heap_apaga(h);
     return 1;
 }
 
