@@ -40,10 +40,14 @@ int proximas_n_chegadas(lista *tempos, lista *origens, lista *aeroportos, int n)
 	
 	/* _3_> Retirar da Heap */
 	
-	for(i=1; i<=5; i++){
-		printf("%i: %s\n", i, heap_remove(heapvoos));
-	}
-		
+	for (int i = 0; i < n; ++i)
+    {
+        char * str;
+        printf("[%d]: %s\n", i+1, str = heap_remove(heapvoos));
+        free(str);
+    }
+	
+    heap_apaga(heapvoos);	
 	/* FIM _3_*/
 	
 	
@@ -67,6 +71,8 @@ lista *pesquisa_destinos(grafo *rotas, lista *aeroportos, const char *origem) {
 		}
 		lista_insere(l, e->str, NULL);
 	}
+
+    vetor_apaga(v);
     return l;
 }
 
