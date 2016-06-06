@@ -8,21 +8,48 @@
 pilha* fila_transforma(fila *f)
 {
 	/* problema 1.1 - a implementar */
-
-	return NULL;
+	int i=0;
+	pilha *paux = pilha_nova();
+	pilha *p = pilha_nova();
+	while(fila_comprimento(f)!=0){
+		pilha_push(paux, fila_front(f));
+		fila_pop(f);
+		i++;
+	}
+	while(p->tamanho!=i){
+		pilha_push(p, pilha_top(paux));
+		pilha_pop(paux);
+	}
+	return p;
 }
 
 int pilha_remove(pilha *p, const char* string)
 {	
 	/* problema 1.2 - a implementar */
-
-	return 0;
+	int tamanho = p->tamanho, i;
+	pilha *paux = pilha_nova();
+	while(p->tamanho!=0){
+		pilha_push(paux, pilha_top(p));
+		pilha_pop(p);
+	}
+	while(paux->tamanho!=0){
+		if(strcmp(pilha_top(paux), string)!=0) pilha_push(p, pilha_top(paux));
+		pilha_pop(paux);
+	}
+	return 1;
 }
 
 tabela_dispersao tabela_copia_todos(tabela_dispersao origem, hash_func * h)
 {
 	/* problema 1.3 - a implementar */
-	return NULL;	
+	int n, i;
+	objeto *o;
+	tabela_dispersao tbl = tabela_cria(origem->tamanho, h);
+	o = tabela_elementos(origem, &n);
+	for(i=0; i<n; i++){
+		tabela_adiciona(tbl, &o[i]);
+	}
+	return tbl;	
 
 }
 
