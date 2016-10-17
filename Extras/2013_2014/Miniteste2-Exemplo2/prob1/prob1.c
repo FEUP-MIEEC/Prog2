@@ -26,6 +26,10 @@ lista* descobre_segredo(arvore_avl *avl, lista *l)
 	return NULL;
 }
 
+lista* descobre_segredo_recurs(no_avl *avl, lista *l){
+	return NULL;
+}
+
 /* v-- nao alterar funcao main --v */
 
 int main()

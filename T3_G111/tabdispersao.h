@@ -11,7 +11,7 @@
 #define TABDISPERSAO_ERRO       (-2)
 #define TABDISPERSAO_NAOEXISTE  (-3)
 
-#define TAMANHO_CHAVE	 100
+#define TAMANHO_CHAVE	 25
 #define TAMANHO_VALOR	100
 
 /* tabela de dispersao de strings baseada em encadeamento */
@@ -146,10 +146,6 @@ unsigned long hash_krm(const char* chave, int tamanho);
  * \remark (+) representa "ou exclusivo" que em C e' indicado por ^
  */
 unsigned long hash_djbm(const char *chave, int tamanho);
-
-unsigned long hash_wc(const char *chave, int tamanho);
-
-unsigned long hash_ds(const char *chave, int tamanho);
 
 /**
  * Esta funcao imprime o estado actual da tabela para o ecra

@@ -5,7 +5,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
-#include <math.h>
 #include "tabdispersao.h"
 
 tabela_dispersao* tabela_nova(int tamanho, hash_func *hfunc)
@@ -275,24 +274,6 @@ unsigned long hash_djbm(const char* chave, int tamanho)
     return h % tamanho;
 }
 
-unsigned long hash_wc(const char* chave, int tamanho)
-{
-	int i=0, l=0;
-	while(chave[i]){
-		l+=chave[i++];
-	}
-	return l % tamanho;
-}
-
-unsigned long hash_ds(const char* chave, int tamanho){
-	int i;
-	unsigned long r=0L;
-	for(i=0; i<strlen(chave); i++){
-		r+=pow(chave[i], chave[i]%5);
-	}
-	
-	return r%tamanho;
-}
 /*================================================================================*/
 void mostraTabela(tabela_dispersao *td)
 {
